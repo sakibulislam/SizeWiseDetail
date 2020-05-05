@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="QueryExamplePGPageDef"
+                Package="mnj.ont.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HeaderVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="HeaderVO1Iterator"/>
+    <searchRegion Criteria="HeaderVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HeaderVO1Iterator" id="HeaderVOCriteriaQuery"/>
+    <invokeAction id="setSessionExec" Binds="setSessionValues"
+                  Refresh="always"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HeaderVO1Iterator" id="HeaderVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.HeaderVO" Name="HeaderVO10">
+        <AttrNames>
+          <Item Value="HeaderId"/>
+          <Item Value="OrderedQuantity"/>
+          <Item Value="OrderQuantityUom"/>
+          <Item Value="Description"/>
+          <Item Value="LineNumber"/>
+          <Item Value="OcNo"/>
+          <Item Value="BuyerName"/>
+          <Item Value="Season"/>
+          <Item Value="DropPeriod"/>
+          <Item Value="Brand"/>
+          <Item Value="StyleName"/>
+          <Item Value="StyleNo"/>
+          <Item Value="Fit"/>
+          <Item Value="EndUser"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="BpoNo"/>
+          <Item Value="InventoryItemId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="QtyTotal"/>
+          <Item Value="Attachemnt"/>
+          <Item Value="OriginalBpoNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="HeaderVO1Iterator" id="setCurrentRowWithKey"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <methodAction id="setSessionValues"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1" usesUpload="true">
+        <af:panelBox text="Upload Sizes" id="pb1">
+          <f:facet name="toolbar"/>
+          <af:panelHeader text="-" id="ph1">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:panelFormLayout id="pfl1">
+              <f:facet name="footer">
+                <af:commandButton text="Back To Search" id="cb1"
+                                  action="BackToQueryNew"/>
+              </f:facet>
+              <af:panelGroupLayout id="pgl1" layout="horizontal">
+                <af:panelHeader text="BPO " id="ph2" inlineStyle="height:85px;">
+                  <f:facet name="context"/>
+                  <f:facet name="legend"/>
+                  <af:inputFile label="Upload" id="if1"
+                                valueChangeListener="#{MyManagedBean.fileUploadBPO}"
+                                autoSubmit="true"/>
+                </af:panelHeader>
+                <af:panelHeader text="DCPO" id="panelHeader1"
+                                inlineStyle="height:85px;">
+                  <f:facet name="context"/>
+                  <f:facet name="legend"/>
+                  <af:inputFile label="Upload" id="inputFile1"
+                                autoSubmit="true"
+                                valueChangeListener="#{MyManagedBean.fileUploadDCPO}"/>
+                </af:panelHeader>
+              </af:panelGroupLayout>
+            </af:panelFormLayout>
+          </af:panelHeader>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

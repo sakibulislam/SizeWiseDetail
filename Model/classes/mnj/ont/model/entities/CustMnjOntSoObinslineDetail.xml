@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustMnjOntSoObinslineDetail"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="CUST_MNJ_ONT_SO_OBINSLINE"
+  AliasName="CustMnjOntSoObinslineDetail"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.entities.CustMnjOntSoObinslineDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SoObinslineHId"
+    IsNotNull="true"
+    ColumnName="SO_OBINSLINE_H_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SalesOrderId"
+    Precision="15"
+    Scale="0"
+    ColumnName="SALES_ORDER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SolineId"
+    Precision="15"
+    Scale="0"
+    ColumnName="SOLINE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SoObinslineId"
+    Precision="15"
+    Scale="0"
+    ColumnName="SO_OBINSLINE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemCode"
+    Precision="50"
+    ColumnName="ITEM_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SoObno"
+    Precision="100"
+    ColumnName="SO_OBNO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SizeGroupId"
+    Precision="15"
+    ColumnName="SIZE_GROUP_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InseamId"
+    Precision="50"
+    ColumnName="INSEAM_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TotalRatio"
+    Precision="10"
+    Scale="0"
+    ColumnName="TOTAL_RATIO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InseamQty"
+    Precision="10"
+    Scale="0"
+    ColumnName="INSEAM_QTY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    Precision="15"
+    Scale="0"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="15"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InventoryItemId"
+    ColumnName="INVENTORY_ITEM_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Obrefno"
+    Precision="50"
+    ColumnName="OBREFNO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LegacyId"
+    Precision="30"
+    ColumnName="LEGACY_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PackType"
+    Precision="2"
+    ColumnName="PACK_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Uom"
+    Precision="5"
+    ColumnName="UOM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrgId"
+    Precision="4"
+    Scale="0"
+    ColumnName="ORG_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LineNo"
+    Precision="5"
+    Scale="0"
+    ColumnName="LINE_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateLogin"
+    ColumnName="LAST_UPDATE_LOGIN"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute1"
+    Precision="250"
+    ColumnName="ATTRIBUTE1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute2"
+    Precision="250"
+    ColumnName="ATTRIBUTE2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute3"
+    Precision="250"
+    ColumnName="ATTRIBUTE3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute4"
+    Precision="250"
+    ColumnName="ATTRIBUTE4"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute5"
+    Precision="250"
+    ColumnName="ATTRIBUTE5"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute6"
+    Precision="250"
+    ColumnName="ATTRIBUTE6"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute7"
+    Precision="250"
+    ColumnName="ATTRIBUTE7"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute8"
+    Precision="250"
+    ColumnName="ATTRIBUTE8"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute9"
+    Precision="250"
+    ColumnName="ATTRIBUTE9"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute10"
+    Precision="250"
+    ColumnName="ATTRIBUTE10"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute11"
+    Precision="250"
+    ColumnName="ATTRIBUTE11"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute12"
+    Precision="250"
+    ColumnName="ATTRIBUTE12"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute13"
+    Precision="250"
+    ColumnName="ATTRIBUTE13"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute14"
+    Precision="250"
+    ColumnName="ATTRIBUTE14"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute15"
+    Precision="250"
+    ColumnName="ATTRIBUTE15"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SizeValue"
+    ColumnName="SIZE_VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SizeQty"
+    ColumnName="SIZE_QTY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SizeKey"
+    Precision="250"
+    ColumnName="SIZE_KEY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InseamSizeConcat"
+    Precision="100"
+    ColumnName="INSEAM_SIZE_CONCAT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Country"
+    Precision="500"
+    ColumnName="COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUST_MNJ_ONT_SO_OBINSLINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="CustMnjOntSoObinSizlineLINES"
+    Association="mnj.ont.model.entities.CustMnjOntSoObinslineFkAssoc"
+    AssociationEnd="mnj.ont.model.entities.CustMnjOntSoObinslineFkAssoc.CustMnjOntSoObinSizlineLINES"
+    AssociationOtherEnd="mnj.ont.model.entities.CustMnjOntSoObinslineFkAssoc.CustMnjOntSoObinslineDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CustMnjOntSoObinslinePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CUST_MNJ_ONT_SO_OBINSLINE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.CustMnjOntSoObinslineDetail.SoObinslineHId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00333684">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00333684"/>
+      <Attr Name="_checkCondition" Value='"SO_OBINSLINE_H_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.CustMnjOntSoObinslineDetail.SoObinslineHId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CustMnjOntSoObinslineFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUST_MNJ_ONT_SO_OBINSIZLINE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CUST_MNJ_ONT_SO_OBINSLINE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.CustMnjOntSoObinslineDetail.SoObinslineId"/>
+    </AttrArray>
+  </Key>
+</Entity>

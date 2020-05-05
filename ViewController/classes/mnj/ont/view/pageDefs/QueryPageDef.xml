@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="QueryPageDef"
+                Package="mnj.ont.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HeaderVO1" RangeSize="10"
+              DataControl="AppModuleDataControl" id="HeaderVO1Iterator"/>
+    <searchRegion Criteria="HeaderVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HeaderVO1Iterator" id="HeaderVOCriteriaQuery"/>
+    <iterator id="InterfaceUploadVO1Iterator" Binds="InterfaceUploadVO1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+    <invokeAction id="setSessionValExe" Binds="setSessionValues"
+                  Refresh="always"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HeaderVO1Iterator" id="HeaderVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.HeaderVO" Name="HeaderVO10">
+        <AttrNames>
+          <Item Value="BpoNo"/>
+          <Item Value="Description"/>
+          <Item Value="OcNo"/>
+          <Item Value="OrderQuantityUom"/>
+          <Item Value="OrderedQuantity"/>
+          <Item Value="BuyerName"/>
+          <Item Value="Season"/>
+          <Item Value="DropPeriod"/>
+          <Item Value="Brand"/>
+          <Item Value="StyleName"/>
+          <Item Value="StyleNo"/>
+          <Item Value="Fit"/>
+          <Item Value="EndUser"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="HeaderId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <methodAction id="callSplitSizes"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callSplitSizes"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.callSplitSizes_AppModuleDataControl_dataProvider_callSplitSizes_result"/>
+    <action IterBinding="HeaderVO1Iterator" id="setCurrentRowWithKey"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <methodAction id="setSessionValues"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="340" NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="1110" NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="51159" NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

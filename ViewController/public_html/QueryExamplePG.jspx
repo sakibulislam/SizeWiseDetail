@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1" usesUpload="true">
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+          <af:panelHeader text="Size Wise Detail" id="ph1"
+                          styleClass="AFStretchWidth">
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.HeaderVOCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.HeaderVOCriteriaQuery.queryModel}"
+                      queryListener="#{bindings.HeaderVOCriteriaQuery.processQuery}"
+                      queryOperationListener="#{bindings.HeaderVOCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::pc1"/>
+          </af:panelHeader>
+          <af:panelGroupLayout id="pgl3"
+                               inlineStyle="border-color:rgb(198,198,198); border-style:solid; width:500px; margin-left:300px;"
+                               layout="horizontal">
+            <af:commandButton text="Download CSV format" id="cb4"
+                              inlineStyle="font-size:small;">
+              <af:fileDownloadActionListener contentType="text/csv"
+                                             filename="Size Breakdown csv.csv"
+                                             method="#{MyManagedBean.exportToCSV}"/>
+            </af:commandButton>
+            <af:separator id="s1"/>
+            <af:spacer width="50" height="10" id="s2"/>
+            <af:inputFile label="Upload CSV here" id="if1" autoSubmit="true"
+                          valueChangeListener="#{MyManagedBean.uploadMultipleBpo}"/>
+          </af:panelGroupLayout>
+          <af:panelCollection id="pc1" inlineStyle="height:400.0px;"
+                              styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar">
+              <af:toolbar id="t1">
+                <af:commandButton actionListener="#{bindings.setCurrentRowWithKey.execute}"
+                                  text="Open"
+                                  disabled="#{!bindings.setCurrentRowWithKey.enabled}"
+                                  id="cb1" action="GoEditPG"
+                                  inlineStyle="height:30px;"/>
+                <af:commandButton text="Upload" id="cb2" action="GoUploadNew"
+                                  inlineStyle="height:30px;"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.HeaderVO1.collectionModel}" var="row"
+                      rows="#{bindings.HeaderVO1.rangeSize}"
+                      emptyText="#{bindings.HeaderVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.HeaderVO1.rangeSize}"
+                      rowBandingInterval="0"
+                      filterModel="#{bindings.HeaderVOCriteriaQuery.queryDescriptor}"
+                      queryListener="#{bindings.HeaderVOCriteriaQuery.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.HeaderVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.HeaderVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" id="resId1" partialTriggers="::cb1">
+              <af:column sortProperty="BpoNo" filterable="true" sortable="true"
+                         headerText="BPO No." id="resId1c16"
+                         filterFeatures="caseInsensitive" align="center"
+                         width="140"
+                         inlineStyle="height:35.0px; text-align:center; font-size:12px; font-family:'OpenSans-Bold'; font-weight:bold; background-image:none; vertical-align:middle; border-left:solid 1px;">
+                <af:commandLink text="#{row.bindings.BpoNo.inputValue}" id="cl1"
+                                action="GoEditPG"/>
+              </af:column>
+              <af:column sortProperty="OcNo" filterable="true" sortable="true"
+                         headerText="STN" id="resId1c6" width="150"
+                         filterFeatures="caseInsensitive" align="center">
+                <af:outputText value="#{row.OcNo}" id="ot4"/>
+              </af:column>
+              <af:column sortProperty="Description" filterable="true"
+                         sortable="true" headerText="Item" id="resId1c4"
+                         width="200" align="center">
+                <af:commandLink text="#{row.bindings.Description.inputValue}"
+                                id="cl2" action="GoEditPG"/>
+              </af:column>
+              <af:column sortProperty="OrderQuantityUom" filterable="true"
+                         sortable="true" headerText="UOM" id="resId1c3"
+                         width="70" filterFeatures="caseInsensitive"
+                         align="center">
+                <af:outputText value="#{row.OrderQuantityUom}" id="ot19"/>
+              </af:column>
+              <af:column sortProperty="OrderedQuantity" filterable="true"
+                         sortable="true" headerText="STN Qty" id="resId1c2"
+                         width="70" align="center">
+                <af:outputText value="#{row.OrderedQuantity}" id="ot2">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.OrderedQuantity.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="BuyerName" filterable="true"
+                         sortable="true" headerText="Buyer Name" id="resId1c7"
+                         width="100" filterFeatures="caseInsensitive"
+                         align="center">
+                <af:outputText value="#{row.BuyerName}" id="ot16"/>
+              </af:column>
+              <af:column sortProperty="Season" filterable="true" sortable="true"
+                         headerText="Season" id="resId1c8" width="70"
+                         filterFeatures="caseInsensitive" align="center">
+                <af:outputText value="#{row.Season}" id="ot7"/>
+              </af:column>
+              <af:column sortProperty="DropPeriod" filterable="true"
+                         sortable="true" headerText="Drop/Period" id="resId1c9"
+                         width="70" filterFeatures="caseInsensitive"
+                         align="center">
+                <af:outputText value="#{row.DropPeriod}" id="ot15"/>
+              </af:column>
+              <af:column sortProperty="Brand" filterable="true" sortable="true"
+                         headerText="Brand" id="resId1c10"
+                         filterFeatures="caseInsensitive" align="center"
+                         width="70">
+                <af:outputText value="#{row.Brand}" id="ot9"/>
+              </af:column>
+              <af:column sortProperty="StyleName" filterable="true"
+                         sortable="true" headerText="Style Name" id="resId1c11"
+                         filterFeatures="caseInsensitive" align="center"
+                         width="100">
+                <af:outputText value="#{row.StyleName}" id="ot11"/>
+              </af:column>
+              <af:column sortProperty="StyleNo" filterable="true"
+                         sortable="true" headerText="Style No" id="resId1c12"
+                         filterFeatures="caseInsensitive" align="center"
+                         width="100">
+                <af:outputText value="#{row.StyleNo}" id="ot1"/>
+              </af:column>
+              <af:column sortProperty="Fit" filterable="true" sortable="true"
+                         headerText="FIT" id="resId1c13"
+                         filterFeatures="caseInsensitive" align="center"
+                         width="70">
+                <af:outputText value="#{row.Fit}" id="ot3"/>
+              </af:column>
+              <af:column sortProperty="EndUser" filterable="true"
+                         sortable="true" headerText="End User" id="resId1c14"
+                         align="center" width="70">
+                <af:outputText value="#{row.EndUser}" id="ot5"/>
+              </af:column>
+              <af:column headerText="Attachment" id="c1" align="center"
+                         width="50">
+                <af:commandLink text="#{row.bindings.Attachemnt.inputValue=='0'? '...' : row.bindings.Attachemnt.inputValue}"
+                                id="cl3"
+                                action="#{MyManagedBean.callAttachment}"/>
+              </af:column>
+              <af:column sortProperty="HeaderId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.HeaderId.label}"
+                         id="resId1c1" width="105">
+                <af:outputText value="#{row.HeaderId}" id="ot8">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.HeaderId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="Originalb BPO"
+                         id="c2" rendered="true" align="center" sortable="true"
+                         filterable="true" sortProperty="OriginalbBpoNo"
+                         filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.OriginalBpoNo}" id="ot14"/>
+              </af:column>
+              <af:column sortProperty="LineNumber" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.LineNumber.label}"
+                         id="resId1c5" width="105" visible="false">
+                <af:outputText value="#{row.LineNumber}" id="ot18">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.LineNumber.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="ItemDescription" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.ItemDescription.label}"
+                         id="resId1c15" visible="false">
+                <af:outputText value="#{row.ItemDescription}" id="ot13"/>
+              </af:column>
+              <af:column sortProperty="InventoryItemId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.InventoryItemId.label}"
+                         id="resId1c17" visible="false">
+                <af:outputText value="#{row.InventoryItemId}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.InventoryItemId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="CustomerId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.CustomerId.label}"
+                         id="resId1c18" visible="false">
+                <af:outputText value="#{row.CustomerId}" id="ot12">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.CustomerId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="QtyTotal" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.HeaderVO1.hints.QtyTotal.label}"
+                         id="resId1c19" visible="false">
+                <af:outputText value="#{row.QtyTotal}" id="ot10">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.HeaderVO1.hints.QtyTotal.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

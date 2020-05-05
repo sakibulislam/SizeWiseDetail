@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="EditPageDef"
+                Package="mnj.ont.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HeaderVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="HeaderVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="CustMnjOntSoObinSizlineLINESView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="CustMnjOntSoObinSizlineLINESView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="CustMnjOntSoObinSizlineLINESView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CustMnjOntSoObinSizlineLINESView1Query"/>
+    <iterator Binds="CustMnjOntSoObinslineDetailView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="CustMnjOntSoObinslineDetailView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="CustMnjOntSoObinslineDetailView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CustMnjOntSoObinslineDetailView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="OrderedQuantity">
+      <AttrNames>
+        <Item Value="OrderedQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="OrderQuantityUom">
+      <AttrNames>
+        <Item Value="OrderQuantityUom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="OcNo">
+      <AttrNames>
+        <Item Value="OcNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HeaderVO1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HeaderVO1Iterator" id="Next" RequiresUpdateModel="true"
+            Action="next"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="CustMnjOntSoObinSizlineLINESView1Iterator"
+          id="CustMnjOntSoObinSizlineLINESView1">
+      <nodeDefinition DefName="mnj.ont.model.views.CustMnjOntSoObinSizlineLINESView"
+                      Name="CustMnjOntSoObinSizlineLINESView10">
+        <AttrNames>
+          <Item Value="SizeId"/>
+          <Item Value="SizeQty"/>
+          <Item Value="Uom"/>
+          <Item Value="Inseam"/>
+          <Item Value="PackingType"/>
+          <Item Value="InseamQty"/>
+          <Item Value="Country"/>
+          <Item Value="ToDate"/>
+          <Item Value="CuttDesc"/>
+          <Item Value="DcpoNo"/>
+          <Item Value="DeliveryDate"/>
+          <Item Value="DeliveryTerm"/>
+          <Item Value="ShipMode"/>
+          <Item Value="DeliveryEndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustMnjOntSoObinslineDetailView1Iterator"
+          id="CustMnjOntSoObinslineDetailView1">
+      <nodeDefinition DefName="mnj.ont.model.views.CustMnjOntSoObinslineDetailView"
+                      Name="CustMnjOntSoObinslineDetailView10">
+        <AttrNames>
+          <Item Value="SoObinslineHId"/>
+          <Item Value="SalesOrderId"/>
+          <Item Value="SolineId"/>
+          <Item Value="SoObinslineId"/>
+          <Item Value="ItemCode"/>
+          <Item Value="SoObno"/>
+          <Item Value="SizeGroupId"/>
+          <Item Value="InseamId"/>
+          <Item Value="TotalRatio"/>
+          <Item Value="InseamQty"/>
+          <Item Value="InventoryItemId"/>
+          <Item Value="Obrefno"/>
+          <Item Value="LegacyId"/>
+          <Item Value="PackType"/>
+          <Item Value="Uom"/>
+          <Item Value="OrgId"/>
+          <Item Value="LineNo"/>
+          <Item Value="SizeValue"/>
+          <Item Value="SizeQty"/>
+          <Item Value="SizeKey"/>
+          <Item Value="Country"/>
+          <Item Value="InseamSizeConcat"/>
+          
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="BuyerName">
+      <AttrNames>
+        <Item Value="BuyerName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="DropPeriod">
+      <AttrNames>
+        <Item Value="DropPeriod"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="Brand">
+      <AttrNames>
+        <Item Value="Brand"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="StyleName">
+      <AttrNames>
+        <Item Value="StyleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="StyleNo">
+      <AttrNames>
+        <Item Value="StyleNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="Fit">
+      <AttrNames>
+        <Item Value="Fit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="EndUser">
+      <AttrNames>
+        <Item Value="EndUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="BpoNo">
+      <AttrNames>
+        <Item Value="BpoNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CustMnjOntSoObinslineDetailView1Iterator"
+            id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustMnjOntSoObinslineDetailView1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="CustMnjOntSoObinSizlineLINESView1Iterator"
+            id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustMnjOntSoObinSizlineLINESView1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="callMatrix"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callMatrix"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.callMatrix_AppModuleDataControl_dataProvider_callMatrix_result"/>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="CustomerId">
+      <AttrNames>
+        <Item Value="CustomerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustMnjOntSoObinslineDetailView1Iterator"
+                     id="TotalSizeQty1">
+      <AttrNames>
+        <Item Value="TotalSizeQty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustMnjOntSoObinSizlineLINESView1Iterator"
+                     id="TotalSizeQuantity">
+      <AttrNames>
+        <Item Value="TotalSizeQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="QtyTotal">
+      <AttrNames>
+        <Item Value="QtyTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="Season">
+      <AttrNames>
+        <Item Value="Season"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

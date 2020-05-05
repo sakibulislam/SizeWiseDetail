@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.62.29" id="DataBindings" SeparateXMLFiles="false"
+             Package="mnj.ont.view" ClientType="Generic">
+  <pageMap>
+    <page path="/Query.jspx" usageId="mnj_ont_view_QueryPageDef"/>
+    <page path="/view1.jspx" usageId="mnj_ont_view_view1PageDef"/>
+    <page path="/Edit.jspx" usageId="mnj_ont_view_EditPageDef"/>
+    <page path="/DataUpload.jspx" usageId="mnj_ont_view_DataUploadPageDef"/>
+    <page path="/QueryExamplePG.jspx"
+          usageId="mnj_ont_view_QueryExamplePGPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mnj_ont_view_QueryPageDef"
+          path="mnj.ont.view.pageDefs.QueryPageDef"/>
+    <page id="mnj_ont_view_view1PageDef"
+          path="mnj.ont.view.pageDefs.view1PageDef"/>
+    <page id="mnj_ont_view_EditPageDef"
+          path="mnj.ont.view.pageDefs.EditPageDef"/>
+    <page id="mnj_ont_view_DataUploadPageDef"
+          path="mnj.ont.view.pageDefs.DataUploadPageDef"/>
+    <page id="mnj_ont_view_QueryExamplePGPageDef"
+          path="mnj.ont.view.pageDefs.QueryExamplePGPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="mnj.ont.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

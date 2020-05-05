@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="mnj.ont.model.services.AppModule">
+      <AppModuleConfig name="150EB126B87" DeployPlatform="LOCAL" password="apps" DBconnection="jdbc:oracle:thin:@192.168.200.102:1521:prod" user="apps" BC4JConfigName="AppModuleLocal" JDBCName="Conn1" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" IsLazyLoadingTrue="true" jbo.txn.disconnect_level="1" ApplicationName="mnj.ont.model.services.AppModule" jbo.project="mnj.ont.model.Model">
+         <AM-Pooling jbo.doconnectionpooling="true"/>
+         <Database jbo.TypeMapEntries="Oracle" jbo.locking.mode="optimistic" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="mnj.ont.model.services.AppModule"/>
+         <Tester FullProxyInterfaceName="mnj.ont.model.services.common.AppModule"/>
+         <Custom LastUsedConfiguration="AppModuleLocal"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="mnj.ont.model.services.AppModule1Testing">
+      <AppModuleConfig name="14B6D8FF689" user="apps" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" password="apps" DBconnection="jdbc:oracle:thin:@192.168.1.12:1521:vis" IsLazyLoadingTrue="true" JDBCName="Conn1" jbo.project="mnj.ont.model.Model" BC4JConfigName="AppModule1TestingLocal" DeployPlatform="LOCAL" ApplicationName="mnj.ont.model.services.AppModule1Testing">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle"/>
+         <Security AppModuleJndiName="mnj.ont.model.services.AppModule1Testing"/>
+         <Tester FullProxyInterfaceName="mnj.ont.model.services.common.AppModule1Testing"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

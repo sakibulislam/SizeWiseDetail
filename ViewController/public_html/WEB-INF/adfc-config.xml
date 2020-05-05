@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Query">
+    <page>/Query.jspx</page>
+    <input-page-parameter>
+      <from-value>#{param.ParamOrgId}</from-value>
+      <to-value>#{viewScope.OrgId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamUserId}</from-value>
+      <to-value>#{viewScope.UserId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespId}</from-value>
+      <to-value>#{viewScope.RespId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespApplId}</from-value>
+      <to-value>#{viewScope.RespApplId}</to-value>
+    </input-page-parameter>
+  </view>
+  <view id="Edit">
+    <page>/Edit.jspx</page>
+  </view>
+  <view id="DataUpload">
+    <page>/DataUpload.jspx</page>
+  </view>
+  <view id="view1">
+    <page>/view1.jspx</page>
+  </view>
+  <view id="QueryExamplePG">
+    <page>/QueryExamplePG.jspx</page>
+    <input-page-parameter>
+      <from-value>#{param.ParamOrgId}</from-value>
+      <to-value>#{viewScope.OrgId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamUserId}</from-value>
+      <to-value>#{viewScope.UserId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespId}</from-value>
+      <to-value>#{viewScope.RespId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespApplId}</from-value>
+      <to-value>#{viewScope.RespApplId}</to-value>
+    </input-page-parameter>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">Query</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome id="__5">goEdit</from-outcome>
+      <to-activity-id id="__3">Edit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__15">
+      <from-outcome id="__17">goUpload</from-outcome>
+      <to-activity-id id="__16">DataUpload</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">Edit</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome id="__10">goBrowse</from-outcome>
+      <to-activity-id id="__8">Query</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__28">
+      <from-outcome id="__30">GoQueryExamplePG</from-outcome>
+      <to-activity-id id="__29">QueryExamplePG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__18">
+    <from-activity-id id="__19">DataUpload</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome id="__22">BackSearch</from-outcome>
+      <to-activity-id id="__21">Query</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__34">
+      <from-outcome id="__36">BackToQueryNew</from-outcome>
+      <to-activity-id id="__35">QueryExamplePG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id id="__24">QueryExamplePG</from-activity-id>
+    <control-flow-case id="__26">
+      <from-outcome id="__27">GoEditPG</from-outcome>
+      <to-activity-id id="__25">Edit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__31">
+      <from-outcome id="__33">GoUploadNew</from-outcome>
+      <to-activity-id id="__32">DataUpload</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__11">
+    <managed-bean-name id="__14">MyManagedBean</managed-bean-name>
+    <managed-bean-class id="__12">mnj.ont.view.backingbean.MyBean</managed-bean-class>
+    <managed-bean-scope id="__13">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

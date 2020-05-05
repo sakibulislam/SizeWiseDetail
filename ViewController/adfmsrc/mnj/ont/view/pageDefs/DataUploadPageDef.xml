@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="DataUploadPageDef"
+                Package="mnj.ont.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <methodAction id="callSplitSizes"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callSplitSizes"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.callSplitSizes_AppModuleDataControl_dataProvider_callSplitSizes_result"/>
+    <methodAction id="uploadDCPOs"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="uploadDCPOs"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AppModuleDataControl.methodResults.uploadDCPOs_AppModuleDataControl_dataProvider_uploadDCPOs_result"/>
+  </bindings>
+</pageDefinition>

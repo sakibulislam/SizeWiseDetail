@@ -1,0 +1,6 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :CustMnjOntSoObinSizlineLINES
+  Attribute :SolineId
+    Change Mandatory to:false
+  Remove Key Constraint: SysC00333681
